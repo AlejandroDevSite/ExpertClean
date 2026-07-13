@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExpertClean</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favico.jpeg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================== NAVBAR ======================== -->
+<nav id="navbar">
+  <!-- LOGO SVG -->
+  <a href="#" class="logo-wrap">
+    <img style="width: 100px;" src="assets/experClean.jpeg" alt="">
+    <!-- <svg class="logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+      <!-- Outer hexagon shape -->
+      <path d="M21 2L38.3 11.5V30.5L21 40L3.7 30.5V11.5L21 2Z" fill="url(#logo-grad)" opacity="0.12"/>
+      <!-- Water drop / spark shape -->
+      <path d="M21 8C21 8 12 18 12 24C12 29 16 33 21 33C26 33 30 29 30 24C30 18 21 8 21 8Z" fill="url(#logo-grad)"/>
+      <!-- Inner highlight -->
+      <path d="M21 14C21 14 16 21 16 25C16 27.8 18.2 30 21 30C23.8 30 26 27.8 26 25C26 21 21 14 21 14Z" fill="white" opacity="0.25"/>
+      <!-- Star accent top -->
+      <circle cx="28" cy="10" r="2" fill="url(#logo-grad2)"/>
+      <circle cx="32" cy="17" r="1.2" fill="url(#logo-grad2)" opacity="0.6"/>
+      <defs>
+        <linearGradient id="logo-grad" x1="12" y1="8" x2="30" y2="33" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#3AAD6E"/>
+          <stop offset="100%" stop-color="#1A90D6"/>
+        </linearGradient>
+        <linearGradient id="logo-grad2" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#34D399"/>
+          <stop offset="100%" stop-color="#38BDF8"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <!-- <div class="logo-text">
+      <span class="logo-name">CleanPro</span>
+      <span class="logo-tagline">Services</span>
+    </div> -->
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#planes">Planes</a></li>
+    <li><a href="#terminos">Términos</a></li>
+    <li><a href="https://wa.me/573113895354" class="nav-cta">Cotizar ahora →</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="menu-overlay" id="overlay"></div>
+
+<!-- ======================== HERO ======================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Servicio certificado · Medellín, Colombia
+      </div>
+
+      <h1 class="hero-title">
+        Calidad<br>
+        <span class="line-em">que brilla.</span><br>
+        Experiencia<br>
+        premium.
+      </h1>
+      <p class="hero-sub">Transformamos cada rincón con un estándar que habla por sí solo. Limpieza profesional para quienes exigen lo mejor.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/573113895354?text=Hola%ExpertClean,%20quisiera%20una%20cotización" class="btn-prim">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015 12.84 19.79 19.79 0 011.95 4.2 2 2 0 013.94 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Solicitar cotización
+        </a>
+        <a href="#servicios" class="btn-out">
+          Ver servicios
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero info card (right) -->
+    <div class="hero-card">
+      <div class="hero-card-title">Resultados en números</div>
+      <div class="hero-stat-list">
+        <div class="hstat">
+          <div class="hstat-icon">
+            <svg width="20" height="20" fill="none" stroke="#69F0AE" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <div class="hstat-num">500<span style="font-size:0.5em;opacity:.5">+</span></div>
+            <div class="hstat-label">Clientes satisfechos</div>
+          </div>
+        </div>
+        <!-- <div class="hstat">
+          <div class="hstat-icon">
+            <svg width="20" height="20" fill="none" stroke="#69F0AE" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="hstat-num">8<span style="font-size:0.5em;opacity:.5">años</span></div>
+            <div class="hstat-label">De experiencia</div>
+          </div>
+        </div> -->
+        <div class="hstat">
+          <div class="hstat-icon">
+            <svg width="20" height="20" fill="none" stroke="#69F0AE" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="hstat-num">98<span style="font-size:0.5em;opacity:.5">%</span></div>
+            <div class="hstat-label">Índice de satisfacción</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- ======================== DIFERENCIAL ======================== -->
+<section id="diferencial"><div id="diferencial-wrap">
+  <div class="dif-grid" style="max-width:1280px;margin:0 auto;padding:130px 64px;">
+
+    <div class="dif-visual reveal-left">
+      <div class="dif-dot-pattern"></div>
+      <div class="dif-img-wrap">
+        <div class="dif-img"></div>
+      </div>
+      <div class="dif-badge-float">
+        <div class="dif-badge-icon">
+          <svg width="26" height="26" fill="none" stroke="url(#bgi)" stroke-width="2" viewBox="0 0 24 24"><defs><linearGradient id="bgi" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E8B57"/><stop offset="100%" stop-color="#0B7EC8"/></linearGradient></defs><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="dif-badge-num">100%</div>
+          <div class="dif-badge-text">Puntualidad garantizada</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-right">
+      <span class="sec-label">Por qué elegirnos</span>
+      <h2 class="dif-title">No es solo limpieza.<br>Es <span>estándar</span><br>profesional.</h2>
+      <p class="dif-desc">Cada servicio está diseñado para superar expectativas. Nuestro enfoque combina metodología, tecnología y un equipo que se enorgullece de los resultados.</p>
+
+      <div class="dif-features">
+        <div class="feat">
+          <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="feat-h">Personal certificado</div><div class="feat-p">Equipo verificado, capacitado y con protocolos internacionales.</div></div>
+        </div>
+        <!-- <div class="feat">
+          <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="feat-h">Productos ecológicos</div><div class="feat-p">Insumos biodegradables certificados que no dañan tu entorno.</div></div>
+        </div> -->
+        <div class="feat">
+          <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="feat-h">Puntualidad garantizada</div><div class="feat-p">Cumplimos siempre el horario pactado. Sin excepciones.</div></div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><div class="feat-h">Atención premium</div><div class="feat-p">Seguimiento post-servicio y resolución inmediata garantizada.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ======================== NOSOTROS ======================== -->
+<section id="nosotros" style="background: linear-gradient(180deg, #f0f8ff 0%, #f5fdf7 100%);">
+  <div class="about-inner reveal">
+    <span class="sec-label">Nuestra esencia</span>
+    <h2 class="sec-title">Misión, visión<br>y <em>valores</em></h2>
+    <p class="about-intro">En ExpertClean Services nos guiamos por un propósito claro: entregar limpieza profesional que respeta tu espacio, tu tiempo y el medio ambiente.</p>
+    <div class="about-grid">
+
+      <article class="about-card reveal d1">
+        <div class="about-card-icon">
+          <svg width="26" height="26" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <span class="about-card-label">01 — Misión</span>
+        <div class="about-card-title">Lo que<br>hacemos</div>
+        <p>Proveer soluciones de limpieza integrales, responsables y confiables para hogares y empresas, generando ambientes saludables, seguros y tranquilos.</p>
+      </article>
+
+      <article class="about-card reveal d2">
+        <div class="about-card-icon">
+          <svg width="26" height="26" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <span class="about-card-label">02 — Visión</span>
+        <div class="about-card-title">A dónde<br>vamos</div>
+        <p>Ser reconocidos como la empresa de limpieza líder en calidad y servicio en Medellín y el área metropolitana, creando experiencias de confianza duraderas.</p>
+      </article>
+
+      <article class="about-card reveal d3">
+        <div class="about-card-icon">
+          <svg width="26" height="26" fill="none" stroke="#2E8B57" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <span class="about-card-label">03 — Valores</span>
+        <div class="about-card-title">En lo que<br>creemos</div>
+        <ul class="values-list">
+          <li>Excelencia en cada detalle</li>
+          <li>Responsabilidad y compromiso</li>
+          <li>Transparencia total</li>
+          <li>Respeto por tu espacio</li>
+          <li>Sustentabilidad ambiental</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROCESO ======================== -->
+<section id="proceso">
+  <div class="proceso-inner">
+    <div class="proceso-header reveal">
+      <span class="sec-label">Cómo funcionamos</span>
+      <h2 class="sec-title">Cuatro pasos hacia la <em>perfección</em></h2>
+      <p>Un proceso simple, transparente y diseñado para tu comodidad desde el primer contacto.</p>
+    </div>
+    <div class="proceso-grid">
+      <div class="proceso-step reveal d1">
+        <div class="paso-num">01
+          <div class="paso-icon"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015 12.84"/><path d="M1.95 4.2a2 2 0 012-.2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91"/></svg></div>
+        </div>
+        <div class="paso-title">Contacto & Cotización</div>
+        <div class="paso-desc">Escríbenos por WhatsApp. Respondemos en menos de 30 minutos con un presupuesto a medida.</div>
+      </div>
+      <div class="proceso-step reveal d2">
+        <div class="paso-num">02
+          <div class="paso-icon"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        </div>
+        <div class="paso-title">Agendamos tu cita</div>
+        <div class="paso-desc">Elegimos la fecha y hora que mejor te convenga. Confirmación inmediata con recordatorio previo.</div>
+      </div>
+      <div class="proceso-step reveal d3">
+        <div class="paso-num">03
+          <div class="paso-icon"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        </div>
+        <div class="paso-title">Realizamos el servicio</div>
+        <div class="paso-desc">Nuestro equipo llega equipado y listo. Trabaja con protocolos de alta calidad en cada rincón.</div>
+      </div>
+      <div class="proceso-step reveal d4">
+        <div class="paso-num">04
+          <div class="paso-icon"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        </div>
+        <div class="paso-title">Verificamos resultados</div>
+        <div class="paso-desc">Revisión final y seguimiento post-servicio. Tu satisfacción es nuestra garantía de calidad.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SERVICIOS ======================== -->
+<section id="servicios">
+  <div class="serv-header reveal">
+    <div>
+      <span class="sec-label">Lo que hacemos</span>
+      <h2 class="sec-title">Nuestros<br>servicios</h2>
+    </div>
+    <p class="serv-header-desc">Soluciones completas para hogares y empresas de cualquier escala.</p>
+  </div>
+  <div class="serv-grid">
+    <a href="https://wa.me/573113895354?text=Limpieza%20Residencial" class="serv-card feat-card reveal">
+      <div class="feat-card-badge">★ Más popular</div>
+      <div class="sc-inner">
+        <div class="sc-icon"><svg width="28" height="28" fill="none" stroke="white" stroke-width="1.6" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="sc-cat">Residencial</div>
+        <div class="sc-title">Limpieza de Hogares</div>
+        <div class="sc-desc">Tu hogar merece el mejor cuidado. Limpieza profunda, desinfección y orden con los más altos estándares. Resultados visibles desde la primera sesión. Disponible para apartamentos, casas y condominios de cualquier tamaño.</div>
+        <div class="sc-cta">Solicitar ahora <div class="sc-cta-arrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      </div>
+    </a>
+    <a href="https://wa.me/573113895354?text=Limpieza%20Corporativa" class="serv-card reveal d1">
+      <div class="sc-inner">
+        <div class="sc-icon"><svg width="24" height="24" fill="none" stroke="#2E8B57" stroke-width="1.7" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="sc-cat">Corporativo</div>
+        <div class="sc-title">Oficinas & Empresas</div>
+        <div class="sc-desc">Ambientes de trabajo limpios, seguros y productivos con planes adaptados a tu horario.</div>
+        <div class="sc-cta">Solicitar ahora <div class="sc-cta-arrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      </div>
+    </a>
+    <a href="https://wa.me/573113895354?text=Limpieza%20Post-Obra" class="serv-card reveal d2">
+      <div class="sc-inner">
+        <div class="sc-icon"><svg width="24" height="24" fill="none" stroke="#2E8B57" stroke-width="1.7" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="sc-cat">Especializado</div>
+        <div class="sc-title">Post-Obra</div>
+        <div class="sc-desc">Eliminamos polvo, residuos y dejamos el espacio listo para habitar o inaugurar.</div>
+        <div class="sc-cta">Solicitar ahora <div class="sc-cta-arrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      </div>
+    </a>
+    <a href="https://wa.me/573113895354?text=Servicio%20de%20Niñera" class="serv-card reveal d1">
+      <div class="sc-inner">
+        <div class="sc-icon"><svg width="24" height="24" fill="none" stroke="#2E8B57" stroke-width="1.7" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="sc-cat">Cuidado</div>
+        <div class="sc-title">Servicio de Niñera</div>
+        <div class="sc-desc">Cuidado profesional y responsable para tus hijos. Personal capacitado y de confianza.</div>
+        <div class="sc-cta">Solicitar ahora <div class="sc-cta-arrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      </div>
+    </a>
+    <a href="https://wa.me/573113895354?text=Cuidado%20de%20Adulto%20Mayor" class="serv-card reveal d2">
+      <div class="sc-inner">
+        <div class="sc-icon"><svg width="24" height="24" fill="none" stroke="#2E8B57" stroke-width="1.7" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 12v4M10 14h4"/></svg></div>
+        <div class="sc-cat">Cuidado</div>
+        <div class="sc-title">Cuidado de Adulto Mayor</div>
+        <div class="sc-desc">Atención integral y comprometida con el bienestar de nuestros adultos mayores.</div>
+        <div class="sc-cta">Solicitar ahora <div class="sc-cta-arrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ======================== STATS ======================== -->
+<section id="stats">
+  <div class="stats-orb-1"></div>
+  <div class="stats-orb-2"></div>
+  <div class="stats-inner">
+    <div class="stat-item reveal d1">
+      <div class="stat-num-big" data-target="50">0<span class="stat-suffix">+</span></div>
+      <div class="stat-label-big">Clientes satisfechos</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num-big" data-target="4.8"><span class="stat-suffix">★</span></div>
+      <div class="stat-label-big">Calificación promedio</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-num-big" data-target="98"><span class="stat-suffix">%</span></div>
+      <div class="stat-label-big">Satisfacción garantizada</div>
+    </div>
+    <div class="stat-item reveal d4">
+      <div class="stat-num-big" data-target="700"><span class="stat-suffix">+</span></div>
+      <div class="stat-label-big">Servicios completados</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== BREAK ======================== -->
+<section id="break">
+  <div class="break-bg"></div>
+  <div class="break-ov"></div>
+  <div class="break-content reveal">
+    <div class="break-tag"><span></span> ExpertClean Standard</div>
+    <h2>"Tu espacio habla de ti.<br>Nosotros lo<br><em>perfeccionamos.</em>"</h2>
+  </div>
+</section>
+
+<!-- ======================== GALERÍA ======================== -->
+<section id="antes-despues">
+  <div class="ad-inner">
+    <div class="ad-header">
+      <div class="reveal">
+        <span class="sec-label">Nuestro trabajo</span>
+        <h2 class="sec-title">Resultados que<br>hablan solos</h2>
+      </div>
+      <a href="https://wa.me/573113895354" class="btn-prim reveal" style="color:#2E8B57;background:#f0fdf4;border:1.5px solid #c8e6c9">Ver todos →</a>
+    </div>
+    <div class="ad-grid">
+      <div class="ad-card reveal d1">
+        <div class="ad-card-1" style="width:100%;height:100%;position:absolute;inset:0;background-image:url('assets/2.jpeg');background-size:cover;background-position:center;background-repeat:no-repeat"></div>
+        <div class="ad-card-ov"></div>
+        <div class="ad-card-label">
+          <div class="ad-chip">Cocina</div>
+          <div class="ad-title">Comidas caseras con sabor a hogar</div>
+        </div>
+      </div>
+      <div class="ad-card reveal d2">
+        <div class="ad-card-2" style="width:100%;height:100%;position:absolute;inset:0;background-image:url('assets/3.jpeg');background-size:cover;background-position:center;background-repeat:no-repeat"></div>
+        <div class="ad-card-ov"></div>
+        <div class="ad-card-label">
+          <div class="ad-chip">Hogar</div>
+          <div class="ad-title">Planchado y cuidado de tu ropa</div>
+        </div>
+      </div>
+      <div class="ad-card reveal d3">
+        <div class="ad-card-3" style="width:100%;height:100%;position:absolute;inset:0;background-image:url('assets/4.jpeg');background-size:cover;background-position:center;background-repeat:no-repeat"></div>
+        <div class="ad-card-ov"></div>
+        <div class="ad-card-label">
+          <div class="ad-chip">Corporativo</div>
+          <div class="ad-title">Oficinas inmaculadas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TESTIMONIOS ======================== -->
+<section id="testimonios">
+  <div class="testi-inner">
+    <div class="testi-header">
+      <div class="reveal">
+        <span class="sec-label">Lo que dicen</span>
+        <h2 class="sec-title">Clientes que<br>confían en nosotros</h2>
+      </div>
+      <div class="reveal" style="text-align:right">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:#2E8B57;letter-spacing:-2px;line-height:1">4.8</div>
+        <div style="font-size:12px;color:#aaa;letter-spacing:0.08em;text-transform:uppercase">Calificación promedio</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card testi-big reveal">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-text">"El nivel de detalle y la puntualidad de ExpertClean son incomparables. Es el tipo de servicio que uno recomienda sin dudarlo a todos en la industria — confiar en ellos fue la mejor decisión para nuestras oficinas."</p>
+        <div class="t-author">
+          <div class="t-ava">MA</div>
+          <div>
+            <div class="t-name">María Alejandra R.</div>
+            <div class="t-role">Directora de Operaciones — Grupo Empresarial Norte</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d2">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-text">"El servicio post-obra fue espectacular. El apartamento quedó como nuevo sin ningún rastro de la remodelación. 100% recomendados sin dudar."</p>
+        <div class="t-author">
+          <div class="t-ava" style="background:linear-gradient(135deg,#0D47A1,#1B5E20)">CG</div>
+          <div><div class="t-name">Carlos González</div><div class="t-role">Propietario — Apto 804</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal d1">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-text">"El equipo que llegó fue muy profesional. Todo quedó impecable y la comunicación antes y después del servicio fue excelente."</p>
+        <div class="t-author">
+          <div class="t-ava" style="background:linear-gradient(135deg,#E65100,#B71C1C)">LM</div>
+          <div><div class="t-name">Laura Martínez</div><div class="t-role">Gerente — Restaurante La Terraza</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal d2">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-text">"Tienen el mejor protocolo de desinfección que he visto. Para nuestra clínica es fundamental y ExpertClean nunca ha fallado."</p>
+        <div class="t-author">
+          <div class="t-ava" style="background:linear-gradient(135deg,#00695C,#1B5E20)">JP</div>
+          <div><div class="t-name">Juan Pablo S.</div><div class="t-role">Director Médico — Clínica IPS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PLANES ======================== -->
+<section id="planes">
+  <div class="planes-inner">
+    <div class="planes-header reveal">
+      <span class="sec-label">Inversión</span>
+      <h2 class="sec-title">Planes para cada <em>necesidad</em></h2>
+      <p>Precios transparentes, sin sorpresas. Elige el plan que mejor se adapta a tu espacio.</p>
+    </div>
+    <div class="planes-grid">
+
+      <!-- PLAN 4 HORAS -->
+      <div class="plan-card reveal d1">
+        <div class="plan-name">Servicio 4 horas</div>
+        <div class="plan-price"><span style="font-size:0.65em">$</span>120k</div>
+        <div class="plan-freq">por servicio</div>
+        <div class="plan-div"></div>
+        <ul class="plan-features">
+          <li>Limpieza profunda inicial</li>
+          <li>Seguridad social incluida</li>
+          <li>Reporte visual y lista de mejoras</li>
+          <li>Personal calificado y con experiencia</li>
+        </ul>
+        <a href="https://wa.me/573113895354?text=Hola,%20me%20interesa%20el%20Servicio%20de%204%20horas%20por%20%24120k.%20Quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20disponibilidad,%20qu%C3%A9%20incluye%20el%20servicio%20y%20c%C3%B3mo%20puedo%20reservar.%20%C2%A1Gracias!" class="plan-btn plan-btn-out">Cotizar ahora →</a>
+      </div>
+
+      <!-- PLAN OFERTA PRIMER SERVICIO -->
+      <div class="plan-card plan-pop reveal d2" style="position:relative;">
+        <div class="plan-badge">🎉 Oferta primer servicio</div>
+        <div class="plan-name">Primer servicio</div>
+        <div class="plan-price" style="position:relative;">
+          <span style="font-size:0.65em">$</span>110k
+          <span style="font-size:0.4em;text-decoration:line-through;opacity:0.5;display:block;margin-top:-4px">antes $120k</span>
+        </div>
+        <div class="plan-freq">4 horas · solo primera vez</div>
+        <div class="plan-div"></div>
+        <ul class="plan-features">
+          <li>Limpieza profunda inicial</li>
+          <li>Seguridad social incluida</li>
+          <li>Reporte visual y lista de mejoras</li>
+          <li>Personal calificado y con experiencia</li>
+        </ul>
+        <a href="https://wa.me/573113895354?text=Hola,%20quiero%20aprovechar%20la%20oferta%20del%20primer%20servicio%20de%204%20horas%20por%20%24110k.%20Me%20gustar%C3%ADa%20conocer%20la%20disponibilidad,%20qu%C3%A9%20incluye%20la%20promoci%C3%B3n%20y%20c%C3%B3mo%20puedo%20agendar.%20%C2%A1Gracias!" class="plan-btn plan-btn-solid">¡Aprovechar oferta →</a>
+      </div>
+
+      <!-- PLAN MENSUAL -->
+      <div class="plan-card reveal d3">
+        <div class="plan-badge" style="background:rgba(52,211,153,0.15);border-color:rgba(52,211,153,0.35);color:#34D399;">Planes mensuales</div>
+        <div class="plan-name">Plan mensual</div>
+        <div class="plan-price"><span style="font-size:0.45em;font-weight:400;opacity:0.7;">Desde </span><span style="font-size:0.65em">$</span>480k</div>
+        <div class="plan-freq">por 4 horas mensuales</div>
+        <div class="plan-div"></div>
+        <ul class="plan-features">
+          <li>Limpieza profunda</li>
+          <li>Personal certificado</li>
+          <li>Seguridad social incluida</li>
+          <li>Seguimiento constante al servicio</li>
+        </ul>
+        <div style="margin-bottom:16px;padding:12px 14px;background:rgba(11,126,200,0.07);border-radius:12px;border:1px solid rgba(11,126,200,0.15);">
+          <p style="font-size:12px;color:#0B7EC8;font-weight:600;letter-spacing:0.04em;text-align:center;">⏰ Contáctanos para conocer nuestras ofertas por tiempo limitado</p>
+        </div>
+        <a href="https://wa.me/573113895354?text=Hola,%20me%20interesa%20el%20Servicio%20Mensual%20desde%20%24480k.%20Quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20beneficios,%20la%20disponibilidad%20y%20c%C3%B3mo%20puedo%20contratarlo.%20%C2%A1Gracias!" class="plan-btn plan-btn-out">Cotizar plan mensual →</a>
+      </div>
+
+    </div>
+    <!-- Servicios adicionales -->
+    <div class="reveal" style="margin-top:32px;text-align:center;padding:24px 32px;background:linear-gradient(135deg,rgba(46,139,87,0.06),rgba(11,126,200,0.06));border-radius:20px;border:1px solid rgba(46,139,87,0.12);">
+      <p style="font-size:14px;color:#555;line-height:1.7;">También disponibles: <strong style="color:var(--black)">Servicio de 6 horas</strong> y <strong style="color:var(--black)">Servicio de 8 horas</strong> — consulta precios por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="sec-label">Preguntas frecuentes</span>
+      <h2 class="sec-title">Todo lo que<br>necesitas saber</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto tiempo toma una limpieza residencial?<div class="faq-ico"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-a">Depende del tamaño del espacio. En promedio, un apartamento de 2 habitaciones tarda 2-3 horas. Para espacios más grandes realizamos visita previa de evaluación gratuita.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Quién brinda los productos e implementos?<div class="faq-ico"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-a">Los productos e implementos los brinda cada cliente. Nuestro equipo se encargará de utilizarlos de la mejor manera para garantizar un servicio de calidad.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿El personal está asegurado y verificado?<div class="faq-ico"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-a">Absolutamente. Cada integrante pasa por verificación de antecedentes, capacitación certificada y cuenta con póliza de seguro. Trabajamos con total transparencia y confianza.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Ofrecen planes de mantenimiento periódico?<div class="faq-ico"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-a">Sí. Tenemos planes semanales, quincenales y mensuales con precios preferenciales. Incluyen seguimiento personalizado y prioridad en asignación de personal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿En cuántas zonas de la ciudad tienen cobertura?<div class="faq-ico"><svg width="14" height="14" fill="none" stroke="#2E8B57" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-a">Cubrimos toda el Área Metropolitana de Medellín incluyendo El Poblado, Laureles, Envigado, Sabaneta, Bello, Itagüí y más. Contáctanos para confirmar cobertura en tu zona.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section id="cta">
+  <div class="cta-bg-orb1"></div>
+  <div class="cta-bg-orb2"></div>
+  <div class="cta-grid-ov"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-label-chip"><span class="hero-badge-dot"></span> Respondemos en menos de 30 min</div>
+    <h2 class="cta-title">¿Listo para<br>transformar<br>tu <em>espacio?</em></h2>
+    <p class="cta-sub">Un mensaje es todo lo que necesitas. Sin compromiso, sin complicaciones. Solo resultados.</p>
+    <a href="https://wa.me/573113895354?text=Hola%ExpertClean,%20quisiera%20información%20y%20una%20cotización" class="btn-wa">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <p class="cta-note">Sin compromiso · Presupuesto gratuito en 30 minutos</p>
+    <div class="cta-trust">
+      <div class="trust-item">
+        <svg class="trust-icon" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Póliza de seguro incluida
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Puntualidad garantizada
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        Satisfacción o repetimos
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TERMINOS ======================== -->
+<section id="terminos">
+  <div class="terms-inner reveal">
+    <span class="sec-label">Legal</span>
+    <h2 class="sec-title">Términos y <em>condiciones</em></h2>
+    <p class="terms-text">Al contratar nuestros servicios aceptas las condiciones de trabajo, políticas de pago y el compromiso mutuo de mantener espacios seguros y profesionales.</p>
+    <ul class="terms-list">
+      <li>Los servicios se programan según disponibilidad y se confirman con validación telefónica o por WhatsApp.</li>
+      <li>En caso de cancelación o reprogramación, se solicita aviso con mínimo 24 horas de anticipación.</li>
+      <li>El presupuesto inicial puede ajustarse según inspección del espacio y condiciones reales.</li>
+      <li>El pago debe ser en transferencia o por medios digitales según la forma acordada.</li>
+      <li>ExpertClean no se responsabiliza por objetos dañados fuera de las áreas y elementos no declarados antes del servicio.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <svg width="38" height="38" viewBox="0 0 42 42" fill="none">
+          <path d="M21 8C21 8 12 18 12 24C12 29 16 33 21 33C26 33 30 29 30 24C30 18 21 8 21 8Z" fill="url(#fg1)"/>
+          <path d="M21 14C21 14 16 21 16 25C16 27.8 18.2 30 21 30C23.8 30 26 27.8 26 25C26 21 21 14 21 14Z" fill="white" opacity="0.18"/>
+          <circle cx="28" cy="10" r="2" fill="#69F0AE"/>
+          <defs><linearGradient id="fg1" x1="12" y1="8" x2="30" y2="33" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3AAD6E"/><stop offset="100%" stop-color="#1A90D6"/></linearGradient></defs>
+        </svg>
+        <span class="footer-logo-text">ExpertClean Services</span>
+      </div>
+      <p class="footer-brand-desc">Estándar profesional de limpieza para hogares y empresas que exigen lo mejor.</p>
+      <div class="footer-social">
+        <a href="#" class="fsoc"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="fsoc"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://wa.me/573113895354" class="fsoc"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Hogares</a></li>
+        <li><a href="#">Oficinas</a></li>
+        <li><a href="#">Post-Obra</a></li>
+        <li><a href="#">Servicio de niñera</a></li>
+        <li><a href="#">Cuidado de adulto mayor</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#terminos">Términos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/573113895354">WhatsApp</a></li>
+        <li><a href="#">info@ExpertClean.co</a></li>
+        <li><a href="#">Medellín, Colombia</a></li>
+        <li><a href="#">Lun–Sáb 7am–7pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="f-copy">© 2026 ExpertClean Services. Todos los derechos reservados.</p>
+    <p class="f-tag"><span class="f-tag-dot"></span> Servicio disponible ahora</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/573113895354?text=Hola%ExpertClean,%20quisiera%20información" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+<script src="script.js"></script>
+</html>
